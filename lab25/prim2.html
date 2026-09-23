@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 2</title></head>
+<body>
+<script>
+let tag = prompt("Какой тег хотите найти?", "h1");
+let regexp = new RegExp(`<${tag}>`);
+alert(regexp); // /<h1>/
+</script>
+</body>
+</html>

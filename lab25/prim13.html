@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 13</title></head>
+<body>
+<script>
+let regexp = /^.+@<.+>\.<.+>$/;
+alert(regexp.test("user@<mail>.ru")); // true
+alert(regexp.test("a@<b>.c"));        // true
+</script>
+</body>
+</html>

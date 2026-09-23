@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>innerHTML</title>
+<script type="text/javascript">
+function readContent() {
+    let el = document.getElementById('content');
+    alert('Содержимое: ' + el.innerHTML);
+}
+
+function setContent() {
+    document.getElementById('content').innerHTML = '<b>Новое содержимое!</b>';
+}
+
+function addContent() {
+    document.getElementById('content').innerHTML += '<br>Добавленная строка';
+}
+</script>
+</head>
+<body>
+<div id="content">Начальное <i>содержимое</i></div>
+<br>
+<input type="button" value="Прочитать" onclick="readContent();">
+<input type="button" value="Заменить" onclick="setContent();">
+<input type="button" value="Добавить" onclick="addContent();">
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 9</title></head>
+<body>
+<script>
+let regexp = /^\d{6}$/;
+alert(regexp.test("220030")); // true
+alert(regexp.test("22003"));  // false (5 цифр)
+alert(regexp.test("2200300"));// false (7 цифр)
+</script>
+</body>
+</html>

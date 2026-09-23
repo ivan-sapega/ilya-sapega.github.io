@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Удаление всех элементов</title>
+</head>
+<body>
+<div id="article">
+<h1>Home Page</h1>
+<p>Text 1</p>
+<p>Text 2</p>
+</div>
+<script>
+const article = document.getElementById("article");
+while (article.firstChild) {
+    article.removeChild(article.firstChild);
+}
+</script>
+</body>
+</html>

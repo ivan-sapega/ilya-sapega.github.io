@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Смена изображений</title>
+<script>
+var numimg = 0;
+var imgslide = new Array();
+for (var i = 0; i < 13; i++) {
+    imgslide[i] = new Image();
+}
+imgslide[0].src = "pojaspersidski.jpg";
+imgslide[1].src = "1.jpg";
+imgslide[2].src = "2.jpg";
+imgslide[3].src = "146_3.jpg";
+imgslide[4].src = "153_p.jpg";
+imgslide[5].src = "160_p.jpg";
+imgslide[6].src = "163_p.jpg";
+imgslide[7].src = "154_p.jpg";
+imgslide[8].src = "159_p.jpg";
+imgslide[9].src = "149_p.jpg";
+imgslide[10].src = "146_4.jpg";
+imgslide[11].src = "146_p_orn.jpg";
+imgslide[12].src = "pojasvasilek.jpg";
+
+function demoslides() {
+    document.images[0].src = imgslide[numimg].src;
+    numimg++;
+    if (numimg == 13) numimg = 0;
+    setTimeout("demoslides()", 1000);
+}
+</script>
+</head>
+<body bgcolor="#FFFFFF">
+<p><img src="155_p.jpg" width="420" height="500"></p>
+<input type="button" value="Демонстрация слуцких поясов" onclick="demoslides()">
+</body>
+</html>

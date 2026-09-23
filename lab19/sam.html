@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Самостоятельная работа</title>
+</head>
+<body>
+<h3>Добавление элемента через DOM</h3>
+<input type="button" value="Добавить абзац" onclick="
+    let p = document.createElement('p');
+    p.textContent = 'Новый абзац добавлен!';
+    document.body.appendChild(p);
+">
+<p id="demo">Старый абзац</p>
+<input type="button" value="Удалить старый" onclick="
+    document.getElementById('demo').remove();
+">
+</body>
+</html>

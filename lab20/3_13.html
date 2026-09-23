@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Поиск элементов</title>
+<script type="text/javascript">
+function findById() {
+    let el = document.getElementById('myDiv');
+    alert('По id: ' + el.innerHTML);
+}
+
+function findByClass() {
+    let els = document.getElementsByClassName('myClass');
+    alert('Найдено по классу: ' + els.length);
+}
+
+function findByTag() {
+    let els = document.getElementsByTagName('p');
+    alert('Найдено параграфов: ' + els.length);
+}
+</script>
+</head>
+<body>
+<div id="myDiv">Элемент с id="myDiv"</div>
+<p class="myClass">Первый параграф</p>
+<p class="myClass">Второй параграф</p>
+<p>Третий параграф</p>
+
+<input type="button" value="По id" onclick="findById();">
+<input type="button" value="По классу" onclick="findByClass();">
+<input type="button" value="По тегу" onclick="findByTag();">
+</body>
+</html>

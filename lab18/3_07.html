@@ -1,0 +1,23 @@
+<html>
+<head>
+<script language='javascript' type='text/javascript'>
+function Win() {
+    myWin = open("", "", "resizable=no,location=yes");
+    myWin.focus();
+}
+function Res() {
+    let x = prompt('Введите размер в пикселах для изменения ширины окна \n (знак минус уменьшит окно)', '300');
+    let y = prompt('Введите размер в пикселах для изменения высоты окна \n (знак минус уменьшит окно)', '400');
+    myWin.resizeTo(x, y);
+    myWin.focus();
+}
+</script>
+</head>
+<body>
+Если желаете открыть другой документ в новом окне, нажмите на кнопку "Открыть"
+<input type='button' value='Открыть' onClick=Win();>
+<br><br>
+Если желаете изменить размеры текущего окна, нажмите на кнопку "Изменить"
+<input type='button' value='Изменить' onClick=Res();>
+</body>
+</html>

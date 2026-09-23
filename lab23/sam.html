@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Самостоятельная работа</title>
+</head>
+<body>
+<div id="article"></div>
+<script>
+// 1. Создаём 15 элементов
+const article = document.getElementById("article");
+for (let i = 1; i <= 15; i++) {
+    const p = document.createElement("p");
+    p.textContent = "Элемент " + i;
+    article.appendChild(p);
+}
+
+// 2. Удаляем элемент по номеру (например, 2-й)
+const num = 2;
+const target = article.children[num - 1];
+article.removeChild(target);
+
+// 3. Вставляем вместо удалённого <p>Фамилия Имя</p>
+const newP = document.createElement("p");
+newP.textContent = "Иванов Иван";
+article.insertBefore(newP, article.children[num - 1] || null);
+
+// 4. Заменяем на <h3>Имя Фамилия</h3>
+const newH3 = document.createElement("h3");
+newH3.textContent = "Иван Иванов";
+article.replaceChild(newH3, newP);
+
+// 5. Копируем в начало
+const copy = newH3.cloneNode(true);
+article.insertBefore(copy, article.firstElementChild);
+</script>
+</body>
+</html>

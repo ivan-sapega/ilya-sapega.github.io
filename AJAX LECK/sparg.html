@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Шпаргалка JS</title>
+<style>
+body { font-family: Arial; margin: 20px; background: #f4f6fa; }
+h1 { text-align: center; color: #2c3e50; }
+h2 { color: #4a90d9; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.card h3 { margin: 0 0 10px; color: #2c3e50; font-size: 16px; }
+
+pre {
+    background: #2d2d2d;
+    color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+}
+
+input[type="text"] { padding: 5px; margin: 3px; border: 1px solid #ccc; border-radius: 4px; }
+input[type="button"] { padding: 5px 12px; margin: 3px; background: #4a90d9; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+input[type="button"]:hover { background: #357ab8; }
+#out, .out { margin-top: 8px; padding: 8px; background: #eef4fb; border-radius: 4px; min-height: 20px; }
+</style>
+</head>
+<body>
+
+<h1>Шпаргалка к контрольной по JavaScript</h1>
+
+<h2>1. Сумма двух чисел</h2>
+<div class="card">
+    <input id="a" type="text" placeholder="Число 1" size="8">
+    <input id="b" type="text" placeholder="Число 2" size="8">
+    <input type="button" value="Сложить" onclick="sum()">
+    <div id="out" class="out"></div>
+    <pre>
+function sum() {
+    let a = parseFloat(document.getElementById("a").value);
+    let b = parseFloat(document.getElementById("b").value);
+    document.getElementById("out").innerHTML = "Сумма: " + (a + b);
+}
+    </pre>
+</div>
+
+<h2>2. Проверка на число</h2>
+<div class="card">
+    <input id="n" type="text" placeholder="Введите число" size="15">
+    <input type="button" value="Проверить" onclick="checkNumber()">
+    <div id="out2" class="out"></div>
+    <pre>
+function checkNumber() {
+    let s = document.getElementById("n").value;
+    let reg = /^-?\d+$/;
+    document.getElementById("out2").innerHTML =
+        reg.test(s) ? "Это число" : "Это не число";
+}
+    </pre>
+</div>
+
+<h2>3. Проверка email</h2>
+<div class="card">
+    <input id="mail" type="text" placeholder="user@mail.ru" size="20">
+    <input type="button" value="Проверить" onclick="checkEmail()">
+    <div id="out3" class="out"></div>
+    <pre>
+function checkEmail() {
+    let s = document.getElementById("mail").value;
+    let reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    document.getElementById("out3").innerHTML =
+        reg.test(s) ? "Верно" : "Неверно";
+}
+    </pre>
+</div>
+
+<h2>4. Проверка даты ГГГГ-ММ-ДД</h2>
+<div class="card">
+    <input id="date" type="text" placeholder="2025-03-15" size="15">
+    <input type="button" value="Проверить" onclick="checkDate()">
+    <div id="out4" class="out"></div>
+    <pre>
+function checkDate() {
+    let s = document.getElementById("date").value;
+    let reg = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+    document.getElementById("out4").innerHTML =
+        reg.test(s) ? "Верно" : "Неверно";
+}
+    </pre>
+</div>
+
+<h2>5. Выбор из списка</h2>
+<div class="card">
+    <select id="sel" onchange="showSel()">
+        <option>Минск</option>
+        <option>Гомель</option>
+        <option>Брест</option>
+    </select>
+    <div id="out5" class="out"></div>
+    <pre>
+function showSel() {
+    let sel = document.getElementById("sel");
+    let val = sel.options[sel.selectedIndex].text;
+    document.getElementById("out5").innerHTML = "Вы выбрали: " + val;
+}
+    </pre>
+</div>
+
+<h2>6. Радиокнопки</h2>
+<div class="card">
+    <label><input type="radio" name="color" value="red"> Красный</label>
+    <label><input type="radio" name="color" value="green"> Зелёный</label>
+    <label><input type="radio" name="color" value="blue"> Синий</label>
+    <input type="button" value="OK" onclick="checkRadio()">
+    <div id="out6" class="out"></div>
+    <pre>
+function checkRadio() {
+    let radios = document.getElementsByName("color");
+    let res = "";
+    for (let r of radios) {
+        if (r.checked) res = r.value;
+    }
+    document.getElementById("out6").innerHTML = "Выбрано: " + res;
+}
+    </pre>
+</div>
+
+<h2>7. Чекбоксы</h2>
+<div class="card">
+    <label><input type="checkbox" name="lang" value="JS"> JS</label>
+    <label><input type="checkbox" name="lang" value="Python"> Python</label>
+    <label><input type="checkbox" name="lang" value="Java"> Java</label>
+    <input type="button" value="OK" onclick="checkBoxes()">
+    <div id="out7" class="out"></div>
+    <pre>
+function checkBoxes() {
+    let boxes = document.getElementsByName("lang");
+    let res = [];
+    for (let b of boxes) {
+        if (b.checked) res.push(b.value);
+    }
+    document.getElementById("out7").innerHTML = "Выбрано: " + res.join(", ");
+}
+    </pre>
+</div>
+
+<h2>8. Текущая дата и время</h2>
+<div class="card">
+    <input type="button" value="Показать" onclick="showDate()">
+    <div id="out8" class="out"></div>
+    <pre>
+function showDate() {
+    let d = new Date();
+    let out = d.getFullYear() + "-" +
+              (d.getMonth() + 1) + "-" +
+              d.getDate() + " " +
+              d.getHours() + ":" +
+              d.getMinutes() + ":" +
+              d.getSeconds();
+    document.getElementById("out8").innerHTML = out;
+}
+    </pre>
+</div>
+
+<h2>9. Таймер</h2>
+<div class="card">
+    <input type="button" value="Старт" onclick="startTimer()">
+    <input type="button" value="Стоп" onclick="stopTimer()">
+    <div id="out9" class="out"></div>
+    <pre>
+let count = 0;
+let timerId;
+
+function startTimer() {
+    timerId = setInterval(tick, 1000);
+}
+function tick() {
+    count++;
+    document.getElementById("out9").innerHTML = "Секунд: " + count;
+}
+function stopTimer() {
+    clearInterval(timerId);
+}
+    </pre>
+</div>
+
+<h2>10. Смена цвета фона</h2>
+<div class="card">
+    <input type="button" value="Красный" onclick="setColor('red')">
+    <input type="button" value="Зелёный" onclick="setColor('green')">
+    <input type="button" value="Синий" onclick="setColor('blue')">
+    <input type="button" value="Белый" onclick="setColor('white')">
+    <pre>
+function setColor(c) {
+    document.body.style.backgroundColor = c;
+}
+    </pre>
+</div>
+
+<h2>11. Массив и цикл</h2>
+<div class="card">
+    <input type="button" value="Показать массив" onclick="showArray()">
+    <div id="out11" class="out"></div>
+    <pre>
+function showArray() {
+    let arr = [10, 20, 30, 40, 50];
+    let out = "";
+    for (let i = 0; i < arr.length; i++) {
+        out += "arr[" + i + "] = " + arr[i] + "<br>";
+    }
+    document.getElementById("out11").innerHTML = out;
+}
+    </pre>
+</div>
+
+<h2>12. Форма с проверкой (общий шаблон)</h2>
+<div class="card">
+    <input id="name" type="text" placeholder="Имя" size="10">
+    <input id="age" type="text" placeholder="Возраст" size="6">
+    <input type="button" value="Отправить" onclick="sendForm()">
+    <div id="out12" class="out"></div>
+    <pre>
+function sendForm() {
+    let name = document.getElementById("name").value.trim();
+    let age = document.getElementById("age").value.trim();
+
+    if (name.length < 2) {
+        document.getElementById("out12").innerHTML = "Имя короткое!";
+        return;
+    }
+    if (!/^\d+$/.test(age)) {
+        document.getElementById("out12").innerHTML = "Возраст — это число!";
+        return;
+    }
+    document.getElementById("out12").innerHTML =
+        "OK: " + name + ", " + age + " лет";
+}
+    </pre>
+</div>
+
+<script>
+/* ==== 1. Сумма ==== */
+function sum() {
+    let a = parseFloat(document.getElementById("a").value);
+    let b = parseFloat(document.getElementById("b").value);
+    document.getElementById("out").innerHTML = "Сумма: " + (a + b);
+}
+
+/* ==== 2. Проверка числа ==== */
+function checkNumber() {
+    let s = document.getElementById("n").value;
+    let reg = /^-?\d+$/;
+    document.getElementById("out2").innerHTML =
+        reg.test(s) ? "Это число" : "Это не число";
+}
+
+/* ==== 3. Email ==== */
+function checkEmail() {
+    let s = document.getElementById("mail").value;
+    let reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    document.getElementById("out3").innerHTML =
+        reg.test(s) ? "Верно" : "Неверно";
+}
+
+/* ==== 4. Дата ==== */
+function checkDate() {
+    let s = document.getElementById("date").value;
+    let reg = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+    document.getElementById("out4").innerHTML =
+        reg.test(s) ? "Верно" : "Неверно";
+}
+
+/* ==== 5. Список ==== */
+function showSel() {
+    let sel = document.getElementById("sel");
+    let val = sel.options[sel.selectedIndex].text;
+    document.getElementById("out5").innerHTML = "Вы выбрали: " + val;
+}
+
+/* ==== 6. Radio ==== */
+function checkRadio() {
+    let radios = document.getElementsByName("color");
+    let res = "";
+    for (let r of radios) {
+        if (r.checked) res = r.value;
+    }
+    document.getElementById("out6").innerHTML = "Выбрано: " + res;
+}
+
+/* ==== 7. Checkbox ==== */
+function checkBoxes() {
+    let boxes = document.getElementsByName("lang");
+    let res = [];
+    for (let b of boxes) {
+        if (b.checked) res.push(b.value);
+    }
+    document.getElementById("out7").innerHTML = "Выбрано: " + res.join(", ");
+}
+
+/* ==== 8. Дата/время ==== */
+function showDate() {
+    let d = new Date();
+    let out = d.getFullYear() + "-" +
+              (d.getMonth() + 1) + "-" +
+              d.getDate() + " " +
+              d.getHours() + ":" +
+              d.getMinutes() + ":" +
+              d.getSeconds();
+    document.getElementById("out8").innerHTML = out;
+}
+
+/* ==== 9. Таймер ==== */
+let count = 0;
+let timerId;
+function startTimer() {
+    if (timerId) return;
+    timerId = setInterval(tick, 1000);
+}
+function tick() {
+    count++;
+    document.getElementById("out9").innerHTML = "Секунд: " + count;
+}
+function stopTimer() {
+    clearInterval(timerId);
+    timerId = null;
+}
+
+/* ==== 10. Цвет ==== */
+function setColor(c) {
+    document.body.style.backgroundColor = c;
+}
+
+/* ==== 11. Массив ==== */
+function showArray() {
+    let arr = [10, 20, 30, 40, 50];
+    let out = "";
+    for (let i = 0; i < arr.length; i++) {
+        out += "arr[" + i + "] = " + arr[i] + "<br>";
+    }
+    document.getElementById("out11").innerHTML = out;
+}
+
+/* ==== 12. Форма ==== */
+function sendForm() {
+    let name = document.getElementById("name").value.trim();
+    let age = document.getElementById("age").value.trim();
+
+    if (name.length < 2) {
+        document.getElementById("out12").innerHTML = "Имя короткое!";
+        return;
+    }
+    if (!/^\d+$/.test(age)) {
+        document.getElementById("out12").innerHTML = "Возраст — это число!";
+        return;
+    }
+    document.getElementById("out12").innerHTML =
+        "OK: " + name + ", " + age + " лет";
+}
+</script>
+
+</body>
+</html>

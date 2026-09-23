@@ -1,0 +1,16 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Несколько обработчиков</title>
+</head>
+<body>
+<input type="button" id="elem" value="Нажми меня">
+<script>
+function handler1() { alert('Событие 1 произошло!'); }
+function handler2() { alert('Событие 2 произошло!'); }
+
+elem.addEventListener("click", handler1);
+elem.addEventListener("click", handler2);
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Функция-обработчик с параметрами</title>
+<script>
+function F1(element, color) {
+    element.style.backgroundColor = color;
+}
+</script>
+</head>
+<body>
+<p onClick="F1(this, 'pink')">Кликни здесь, и этот абзац станет розовым.</p>
+<p onSelectStart="F1(this, 'lime')">Выдели этот текст, и его фон станет зеленым.</p>
+</body>
+</html>

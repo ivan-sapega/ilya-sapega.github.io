@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 3</title></head>
+<body>
+<script>
+let str = "Я ЛюБлЮ JavaScript";
+let regexp = /люблю/ig;
+
+alert(regexp.test(str) + ", позиция: " + regexp.lastIndex);
+// true, позиция: 7
+
+alert(regexp.test(str) + ", позиция: " + regexp.lastIndex);
+// false, позиция: 0
+</script>
+</body>
+</html>

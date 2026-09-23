@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Проверка данных</title>
+<script>
+function validate() {
+    let str = document.getElementById('nik').value.trim();
+    if (str.length <= 0) {
+        document.getElementById('label').innerHTML = "Введите имя (не должно начинаться с пробела)";
+        document.getElementById('nik').focus();
+        return false;
+    }
+    document.getElementById('label').innerHTML = "";
+    return true;
+}
+
+function checkEmail() {
+    let email = document.getElementById('email').value;
+    if (!email.includes('@')) {
+        alert('email должен содержать @');
+        document.getElementById('email').focus();
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+<form onsubmit="return validate() && checkEmail();">
+    <label>Имя: </label><input id="nik" type=text><br>
+    <label id="label"></label><br>
+    <label>e-mail: </label><input type=email id="email"><br>
+    <input type=submit value="Отправить">
+</form>
+</body>
+</html>

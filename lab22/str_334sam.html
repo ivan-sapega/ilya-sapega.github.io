@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Самостоятельная работа: event</title>
+</head>
+<body>
+<div id="area" style="width:400px; height:200px; background:#eef; border:1px solid #333;">
+    Кликни в любом месте
+</div>
+<p id="out">Координаты: —</p>
+
+<script>
+document.getElementById('area').addEventListener('click', function(e) {
+    document.getElementById('out').textContent =
+        'Координаты: X=' + e.clientX + ', Y=' + e.clientY +
+        ' | Тег: ' + e.target.tagName;
+});
+</script>
+</body>
+</html>

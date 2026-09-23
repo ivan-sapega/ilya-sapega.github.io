@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Изменение свойств элемента</title>
+<script type="text/javascript">
+let x = 50, y = 50;
+
+function move() {
+    let el = document.getElementById('box');
+    x += 20; y += 20;
+    el.style.left = x + 'px';
+    el.style.top = y + 'px';
+}
+
+function resize() {
+    let el = document.getElementById('box');
+    el.style.width = '150px';
+    el.style.height = '150px';
+}
+
+function changeFont() {
+    let el = document.getElementById('box');
+    el.style.fontSize = '24px';
+}
+</script>
+</head>
+<body>
+<div id="box" style="position: absolute; left: 50px; top: 50px;
+     width: 100px; height: 100px; background: yellow;">
+    Блок
+</div>
+<br><br><br><br><br><br>
+<input type="button" value="Переместить" onclick="move();">
+<input type="button" value="Изменить размер" onclick="resize();">
+<input type="button" value="Изменить шрифт" onclick="changeFont();">
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Модальные окна</title>
+<script language='javascript' type='text/javascript'>
+function test1() {
+    if (confirm("Если вы хотите закрыть окно, нажмите 'ОК'?"))
+        window.close();
+}
+function test2() {
+    let N = prompt('Введите Ваше имя, пожалуйста', '');
+    window.status = "Здравствуйте, " + N + "!";
+}
+</script>
+</head>
+<body>
+<center>
+<input type=button value="alert" onClick="alert('Сообщение для Вас');">
+<input type=button value="confirm" onClick="test1();">
+<input type=button value="prompt" onClick="test2();">
+</center>
+</body>
+</html>

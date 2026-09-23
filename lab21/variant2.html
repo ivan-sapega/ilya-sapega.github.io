@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Просмотр изображений</title>
+<script>
+// список картинок — можешь заменить на свои
+var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+var current = 0; // текущий индекс
+
+function show() {
+    document.getElementById("pic").src = images[current];
+}
+
+function prev() {
+    current--;
+    if (current < 0) current = images.length - 1; // если ушли в минус — в конец
+    show();
+}
+
+function next() {
+    current++;
+    if (current >= images.length) current = 0;   // если ушли за конец — в начало
+    show();
+}
+</script>
+</head>
+<body>
+<h3>Просмотр изображений</h3>
+
+<img id="pic" src="1.jpg" width="400" height="300"><br><br>
+
+<input type="button" value="Предыдущее изображение" onclick="prev();">
+<input type="button" value="Следующее изображение" onclick="next();">
+</body>
+</html>

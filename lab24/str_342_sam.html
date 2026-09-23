@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Самостоятельная работа: проверка формы</title>
+<script>
+function checkForm() {
+    let name = document.regForm.userName.value.trim();
+    let age  = document.regForm.userAge.value.trim();
+
+    // проверка имени
+    if (name.length < 2) {
+        alert('Имя должно быть не меньше 2 символов!');
+        document.regForm.userName.focus();
+        return false;
+    }
+
+    // проверка возраста
+    if (isNaN(age) || age < 1 || age > 120) {
+        alert('Возраст должен быть числом от 1 до 120!');
+        document.regForm.userAge.focus();
+        return false;
+    }
+
+    alert('Всё верно! Имя: ' + name + ', возраст: ' + age);
+    return true;
+}
+</script>
+</head>
+<body>
+<h3>Регистрация</h3>
+<form name="regForm" onsubmit="return checkForm();">
+    Имя: <input type="text" name="userName"><br><br>
+    Возраст: <input type="text" name="userAge"><br><br>
+    <input type="submit" value="Отправить">
+</form>
+</body>
+</html>
