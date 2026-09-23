@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Регулярные выражения 2</title>
+</head>
+<body>
+<script>
+var s1 = "asdfghjkmnbxz";
+var s2 = "asdfgvcxhhkmnvcbxz";
+var s3 = "vcxjjjjjjjjcjjjjjjcejjjjjjj"
+// 
+var reg = /v(c)./;
+document.write(reg.exec(s3) + '<br>');
+
+var reg2 = /v((c).)/;
+document.write(reg2.exec(s2) + '<br>');
+</script>
+</body>
+</html>

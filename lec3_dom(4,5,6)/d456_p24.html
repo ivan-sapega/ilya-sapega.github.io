@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 24</title>
+<script>
+var n = 0;
+var NN = ["150px", "300px"];
+function func2() {
+    n = (n + 1) % 2;
+    document.getElementById("rr1").style.height = NN[n];
+}
+</script>
+</head>
+<body style="background-color:lightblue">
+<img id="rr1" src="pic1.jpg" style="height:150px" onclick="func2()">
+</body>
+</html>

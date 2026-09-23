@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 27</title>
+<script>
+var col, ob;
+function fover(e) {
+    e = e || event;
+    ob = e.target || e.srcElement;
+    if (ob.type == "button") {
+        col = ob.style.backgroundColor;
+        ob.style.backgroundColor = "yellow";
+        ob.style.color = "red";
+    }
+}
+function fout(e) {
+    e = e || event;
+    ob = e.target || e.srcElement;
+    if (ob.type == "button") {
+        ob.style.backgroundColor = col;
+        ob.style.color = "";
+    }
+}
+</script>
+</head>
+<body>
+<form onmouseover="fover(event)" onmouseout="fout(event)">
+    <input type="button" value="Первая">
+    <input type="button" value="Вторая">
+    <input type="button" value="Третья">
+</form>
+</body>
+</html>

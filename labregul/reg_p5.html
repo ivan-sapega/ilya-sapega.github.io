@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 5</title></head>
+<body>
+<script>
+let str = 'Больше о JavaScript на learn.javascript.ru';
+let regexp2 = /javascript/ig;
+
+alert(regexp2.exec(str) + ", позиция: " + regexp2.lastIndex);
+// JavaScript, позиция: 19
+
+alert(regexp2.exec(str) + ", позиция: " + regexp2.lastIndex);
+// javascript, позиция: 39
+
+alert(regexp2.exec(str) + ", позиция: " + regexp2.lastIndex);
+// null, позиция: 0 (совпадений больше нет)
+</script>
+</body>
+</html>

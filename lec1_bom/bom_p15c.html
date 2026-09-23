@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>keyCode/button</title>
+<script>
+function key(e) { e = e || event; document.title = "Код клавиши = " + e.keyCode; }
+function btn(e) { e = e || event; document.title = "Код кнопки = " + e.button; }
+</script>
+</head>
+<body onkeydown="key(event)" onmousedown="btn(event)">
+<p>Нажми клавишу или кнопку мыши — код в заголовке вкладки.</p>
+</body>
+</html>

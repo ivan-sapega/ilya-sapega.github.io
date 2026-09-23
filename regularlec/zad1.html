@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Паспорт РБ</title>
+<script>
+function check() {
+    var s = document.getElementById("inp").value;
+    var reg = /^[A-Z]{2}\d{7}$/;
+    alert(reg.test(s) ? "Верно" : "Неверно");
+}
+function clear_() { document.getElementById("inp").value = ""; }
+</script>
+</head>
+<body>
+<input id="inp" placeholder="MP1234567" size="20">
+<input type="button" value="Проверить" onclick="check()">
+<input type="button" value="Очистить" onclick="clear_()">
+</body>
+</html>

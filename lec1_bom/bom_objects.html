@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Свойства BOM</title>
+<script>
+function showInfo() {
+    let out = "";
+    out += "innerWidth: " + window.innerWidth + "<BR>";
+    out += "screen.width: " + screen.width + "<BR>";
+    out += "navigator.appName: " + navigator.appName + "<BR>";
+    out += "location.href: " + location.href + "<BR>";
+    out += "history.length: " + history.length + "<BR>";
+    document.getElementById("out").innerHTML = out;
+}
+</script>
+</head>
+<body>
+<h3>Свойства объектов браузера</h3>
+<input type="button" value="Показать" onclick="showInfo()">
+<div id="out"></div>
+</body>
+</html>

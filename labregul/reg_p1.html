@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 1</title></head>
+<body>
+<script>
+let str = "Я ЛюБлЮ JavaScript";
+let regexp1 = /люблю/;
+alert(regexp1.test(str)); // false (регистр не совпадает)
+
+let regexp2 = /люблю/i;
+alert(regexp2.test(str)); // true (флаг i — без учёта регистра)
+</script>
+</body>
+</html>

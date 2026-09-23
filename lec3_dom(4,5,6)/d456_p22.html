@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 22</title>
+<script>
+function func1() { document.getElementById("rr1").src = "pic1.jpg"; }
+function func2() { document.getElementById("rr1").src = "pic2.jpg"; }
+</script>
+</head>
+<body style="background-color:lightblue">
+<img id="rr1" src="pic1.jpg" style="height:150px">
+<form>
+    <input type="button" value="Первая" onclick="func1()">
+    <input type="button" value="Вторая" onclick="func2()">
+</form>
+</body>
+</html>

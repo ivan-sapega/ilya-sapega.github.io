@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Автономер РБ</title>
+<script>
+function check() {
+    var s = document.getElementById("inp").value;
+    var reg = /^\d{4}[A-Z]{2}-[0-7]$/;
+    alert(reg.test(s) ? "Верно" : "Неверно");
+}
+function clear_() { document.getElementById("inp").value = ""; }
+</script>
+</head>
+<body>
+<input id="inp" placeholder="0235KH-5" size="20">
+<input type="button" value="Проверить" onclick="check()">
+<input type="button" value="Очистить" onclick="clear_()">
+</body>
+</html>

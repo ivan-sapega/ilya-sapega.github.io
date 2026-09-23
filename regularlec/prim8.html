@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Email</title>
+<script>
+function check() {
+    var s = document.getElementById("inp").value;
+    var reg = /^_?[a-zA-Z0-9]+([-_\\.][a-zA-Z0-9]+)+@[a-zA-Z0-9]+([-\.][a-zA-Z0-9]+)+$/;
+    alert(reg.test(s) ? "Верно" : "Неверно");
+}
+function clear_() { document.getElementById("inp").value = ""; }
+</script>
+</head>
+<body>
+<input id="inp" type="text" placeholder="ivanov@mail.ru" size="30">
+<input type="button" value="Проверить" onclick="check()">
+<input type="button" value="Очистить" onclick="clear_()">
+</body>
+</html>

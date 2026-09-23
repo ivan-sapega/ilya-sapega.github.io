@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Регулярные выражения 5</title>
+</head>
+<body>
+<script>
+var reg2 = /\d+/g;
+var s1 = "ID = 123 #23 abc345def";
+var s2 = "000";
+
+document.writeln(s1 + "<br>");
+document.writeln("Замена: " + s1.replace(reg2, s2) + "<br>");
+document.writeln("Исходная: " + s1 + "<br>");
+</script>
+</body>
+</html>

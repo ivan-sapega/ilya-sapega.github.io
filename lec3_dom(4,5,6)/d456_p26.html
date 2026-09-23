@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 26</title>
+<script>
+var ob;
+function fover(e) {
+    e = e || event;
+    ob = e.target || e.srcElement;
+    document.title = ob.tagName;
+}
+</script>
+</head>
+<body onmouseover="fover(event)">
+<p>Наведи мышь на разные элементы — имя тега появится в заголовке.</p>
+<form>
+    <input type="button" value="Кнопка">
+    <input type="text" value="Поле">
+</form>
+<img src="pic1.jpg" height="80">
+</body>
+</html>

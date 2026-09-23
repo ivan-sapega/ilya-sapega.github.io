@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 23/1</title>
+<script>
+var flag = true;
+function func2() {
+    flag = !flag;
+    if (flag) document.getElementById("rr1").src = "pic2.jpg";
+    else document.getElementById("rr1").src = "pic1.jpg";
+}
+</script>
+</head>
+<body style="background-color:lightblue">
+<img id="rr1" src="pic1.jpg" style="height:150px" onclick="func2()">
+</body>
+</html>

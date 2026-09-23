@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Регулярные выражения 6</title>
+<script>
+// Запись cookie
+function writeCookie(name, value, ds) {
+    var date = new Date();
+    date.setTime(date.getTime() + ds * 1000 * 60 * 60 * 24);
+    document.cookie = name + "=" + escape(value) + "; expires=" + date.toGMTString();
+}
+
+// Чтение cookie через РЕГУЛЯРНОЕ ВЫРАЖЕНИЕ
+function readCookie(name) {
+    // Шаблон: (начало строки ИЛИ "; ") + имя + "=" + (всё до ";" или конца)
+    var reg = new RegExp("(?:^|; )" + name + "=([^;]*)");
+    var exec = reg.exec(document.cookie);
+    // exec[2] — данные из второй группы (в скобках)
+    return exec ? unescape(exec[2]) : undefined;
+}
+</script>
+</head>
+<body>
+<h3>Cookie через регулярку</h3>
+<button onclick="writeCookie('frend', 'Виктор Кузьмин', 7)">Записать cookie</button>
+<button onclick="alert(readCookie('frend'))">Прочитать cookie</button>
+</body>
+</html>

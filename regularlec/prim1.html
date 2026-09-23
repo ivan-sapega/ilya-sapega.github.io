@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Регулярные выражения 1</title>
+</head>
+<body>
+<script>
+// Шаблон: "v", "c" и любой третий символ
+var reg = /vc./;
+
+// Две строки для проверки
+var s1 = "asdfghjkvcmnbxz";      // НЕТ "vc?"
+var s2 = "asdfgvcxhhvskmnvcbxz"; // ЕСТЬ "vcx" и "vcb"
+
+// test() — есть совпадение или нет
+document.write(reg.test(s1) + '<br>');
+document.write(reg.test(s2) + '<br>');
+
+// exec() — первое совпадение
+document.write('<br>' + reg.exec(s1) + '<br>');
+document.write(reg.exec(s2) + '<br>');
+</script>
+</body>
+</html>

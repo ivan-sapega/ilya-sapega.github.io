@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 15</title>
+<script>
+function func1(e) { e = e || event; document.title = "(" + e.clientX + ", " + e.clientY + ")"; }
+</script>
+</head>
+<body onmousedown="func1(event)" onmousemove="func1(event)">
+<p>Двигай мышь — координаты в заголовке вкладки.</p>
+</body>
+</html>

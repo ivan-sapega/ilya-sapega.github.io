@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 14</title></head>
+<body>
+<script>
+let str = `11 aaa bbb
+ccc 222 ddd
+eee ggg 33`;
+
+// без флага m — только начало/конец всей строки
+alert(/^\d\d/.test(str));      // true (начало всей строки)
+
+// с флагом m — каждая строка отдельно
+alert(/^\d\d/m.test(str));     // true
+alert(/^\d\d\d/m.test(str));   // false (нет строк, начинающихся с 3 цифр)
+alert(/\d\d$/m.test(str));     // true (33 в конце)
+</script>
+</body>
+</html>

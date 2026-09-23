@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Пример 21</title>
+<script>
+function func1() {
+    let p = document.getElementById("tp1");
+    p.innerHTML = "Вы нажали первую кнопку";
+    p.style.color = "blue";
+    p.style.backgroundColor = "pink";
+}
+function func2() {
+    let p = document.getElementById("tp1");
+    p.innerHTML = "Вы нажали вторую кнопку";
+    p.style.color = "blue";
+    p.style.backgroundColor = "lightblue";
+}
+function func3() {
+    let p = document.getElementById("tp1");
+    p.innerHTML = "Вы нажали третью кнопку";
+    p.style.color = "blue";
+    p.style.backgroundColor = "lightgreen";
+}
+</script>
+</head>
+<body>
+<p id="tp1" style="width:8cm;">Пример использования формы с кнопками</p>
+<form>
+    <input type="button" value="Первая" onclick="func1()">
+    <input type="button" value="Вторая" onclick="func2()">
+    <input type="button" value="Третья" onclick="func3()">
+</form>
+</body>
+</html>
