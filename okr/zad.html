@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Обратный отсчет</title>
+
+    <script>
+let cdId = null;
+
+function startCountdown() {
+    let n = parseInt(document.getElementById("sec").value);
+    if (isNaN(n) || n <= 0) {
+        document.getElementById("outCd").innerHTML = "Введите положительное число!";
+        return;
+    }
+    if (cdId !== null) clearInterval(cdId);
+    document.getElementById("outCd").innerHTML = "Осталось: " + n;
+
+    cdId = setInterval(function() {
+        n--;
+        if (n <= 0) {
+            clearInterval(cdId);
+            cdId = null;
+            document.getElementById("outCd").innerHTML = "Время вышло!";
+        } else {
+            document.getElementById("outCd").innerHTML = "Осталось: " + n;
+        }
+    }, 1000);
+}
+    </script>
+</head>
+<body>
+
+  <h2>Решите задачу Головницкий Илья</h2>
+  <h3>вводится число Решите задачу. Создать элемент input и кнопка. В элемент input количество секунд. По событию click на кнопке, в абзаце ниже начинается обратный отсчет секунд, начиная с введенного числа. Когда отсчет дойдет до нуля — он заканчивается.</h3>
+<input id="sec" type="text" placeholder="Сколько секунд?">
+<input type="button" value="Старт" onclick="startCountdown()">
+<p id="outCd"></p>
+
+
+</body>
+</html>
